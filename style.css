@@ -50,14 +50,14 @@ body {
 }
 
 .nav-pill-link:hover {
-    color: #000;
+    color: #8cc8ea;
     background-color: rgba(0, 0, 0, 0.03);
 }
 
 /* Aktif Sekme */
 .nav-pill-link.active {
     background-color: #fff;
-    color: #1e4a8b;
+    color: #8cc8ea;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
