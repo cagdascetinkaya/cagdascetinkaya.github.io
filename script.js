@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Eğer JSON'da "link" tanımlıysa onu kullan, yoksa detay sayfasına git.
                 // Ayrıca dosya linki ise yeni sekmede açması için target="_blank" ekledik.
                 const postUrl = post.link ? post.link : `detay.html?id=${index}`;
-                const targetAttr = post.link ? 'target="_blank"' : ''; 
+const targetAttr = post.link ? 'target="_blank" download' : '';
                 // --------------------------------
 
                 const blogCard = `
