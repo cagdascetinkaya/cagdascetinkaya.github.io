@@ -13,6 +13,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // Yazıları listele
             posts.forEach((post, index) => {
+                
+                // --- DEĞİŞİKLİK YAPILAN KISIM ---
+                // Eğer JSON'da "link" tanımlıysa onu kullan, yoksa detay sayfasına git.
+                // Ayrıca dosya linki ise yeni sekmede açması için target="_blank" ekledik.
+                const postUrl = post.link ? post.link : `detay.html?id=${index}`;
+                const targetAttr = post.link ? 'target="_blank"' : ''; 
+                // --------------------------------
+
                 const blogCard = `
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm hover-card">
@@ -21,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function() {
                         <div class="card-body">
                             <div class="small text-muted mb-2">${post.date}</div>
                             <h5 class="card-title fw-bold">
-                                <a href="detay.html?id=${index}" class="text-decoration-none text-dark stretched-link">${post.title}</a>
+                                <a href="${postUrl}" ${targetAttr} class="text-decoration-none text-dark stretched-link">${post.title}</a>
                             </h5>
                             <p class="card-text text-secondary small">${post.summary}</p>
                         </div>
