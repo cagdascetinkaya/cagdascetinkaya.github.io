@@ -1,6 +1,11 @@
 {
   "posts": [
-            {
+    {
+  "baslik": "How to Create and Play an Online Game w/ Studens",
+  "tarih": "30.01.2026",
+  "link": "assets/1.pdf" 
+    },          
+    {
       "title": "How to Create and Play an Online Game w/ Studens",
       "date": "30 Jan 2026",
       "summary": "Download the file to see general basic instructions to do it",
