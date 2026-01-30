@@ -1,6 +1,13 @@
 {
   "posts": [
-        {
+            {
+      "title": "How to Create and Play an Online Game w/ Studens",
+      "date": "30 Jan 2026",
+      "summary": "Download the file to see general basic instructions to do it",
+      "image": "img/cc_blog.png",
+      "body": "Technologies for Humanity Competition - Middle School Level; aims to take the curiosity and sense of discovery gained in primary school to the next level, enabling students to establish a more conscious, productive and creative relationship with technology. The TEKNOFEST Middle School Science and Discovery Competition will be held in four separate categories: Astronomy and Space Technologies, Natural Sciences and Environmental Awareness, Health and Wellness Technologies, Educational Technologies."
+    },    
+    {
       "title": "Applications for Technology for Humanity Competition are now open",
       "date": "29 Jan 2026",
       "summary": "Applications for Technology for Humanity Competition are now open",
