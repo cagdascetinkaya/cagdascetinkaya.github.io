@@ -2,32 +2,40 @@
   "posts": [
     {
       "title": "How to Create and Play an Online Game w/ Students",
-      "date": "30.01.2026",
-      "summary": "Download the PDF guide.",
-      "image": "img/cc_blog.png",
+      "date": "2026-01-30",
+      "summary": "A step-by-step PDF guide for teachers to create engaging online games with students using free tools.",
+      "image": "",
+      "tags": ["education", "game-based-learning", "guide"],
       "body": "",
-      "link": "assets/1.pdf"
+      "link": "assets/1.pdf",
+      "readTime": 5
     },
     {
-      "title": "How to Create and Play an Online Game w/ Studens",
-      "date": "30 Jan 2026",
-      "summary": "Download the file to see general basic instructions to do it",
-      "image": "img/cc_blog.png",
-      "body": "Technologies for Humanity Competition..."
+      "title": "How to Create and Play an Online Game w/ Students",
+      "date": "2026-01-30",
+      "summary": "Download the file to see general basic instructions for creating interactive online games in your classroom.",
+      "image": "",
+      "tags": ["education", "technology", "interactive"],
+      "body": "## Introduction\n\nCreating online games for students is one of the most engaging ways to teach complex concepts. In this post, I will walk you through the basic steps.\n\n## What You Need\n\n- A computer with internet access\n- A free game creation platform\n- Your creativity!\n\n## Steps\n\n1. Choose your platform\n2. Design the game mechanics\n3. Add educational content\n4. Test with a small group\n5. Deploy and play!\n\n## Conclusion\n\nGame-based learning increases student engagement and retention. Give it a try!",
+      "readTime": 4
     },
     {
-      "title": "Applications for Technology for Humanity Competition are now open",
-      "date": "29 Jan 2026",
-      "summary": "Applications for Technology for Humanity Competition are now open",
+      "title": "Applications for Technology for Humanity Competition Are Now Open",
+      "date": "2026-01-29",
+      "summary": "TEKNOFEST's Technology for Humanity competition is accepting applications. Learn how to apply and what to expect.",
       "image": "img/teknofest_logo.png",
-      "body": "Technologies for Humanity Competition..."
+      "tags": ["competition", "teknofest", "technology"],
+      "body": "## TEKNOFEST Technology for Humanity\n\nThe **Technology for Humanity** competition at TEKNOFEST is now accepting applications! This is a fantastic opportunity for teams passionate about using technology to solve real-world problems.\n\n### Key Dates\n\n- **Application Deadline:** March 15, 2026\n- **Project Submission:** May 1, 2026\n- **Finals:** June 2026\n\n### Who Can Apply?\n\nStudents, educators, and professionals from all backgrounds are welcome.\n\n### How to Apply\n\nVisit the official TEKNOFEST website and follow the registration steps.\n\n> \"Technology is best when it brings people together.\" — Matt Mullenweg",
+      "readTime": 3
     },
     {
-      "title": "Merhaba bu ilk yazımdır",
-      "date": "25 Jan 2026",
-      "summary": "Bu ilk yazım",
-      "image": "img/cc_blog.png",
-      "body": "Bu benim ilk yazım deneme amaçlıdır."
+      "title": "Hello, This is My First Blog Post!",
+      "date": "2026-01-25",
+      "summary": "Welcome to my blog! Here I'll share thoughts on education, technology, and science.",
+      "image": "",
+      "tags": ["personal", "introduction"],
+      "body": "## Welcome!\n\nHello everyone! This is my first blog post. I'm excited to start sharing my thoughts and experiences on:\n\n- **Education** — Innovative teaching methods\n- **Technology** — Tools that make learning better\n- **Science** — Research insights and discoveries\n\nStay tuned for more content! 🚀",
+      "readTime": 2
     }
   ]
 }
