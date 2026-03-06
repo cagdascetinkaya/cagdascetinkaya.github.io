@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blog Post</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body style="background: #f8fafc;">
+
+    <!-- Hero Görsel -->
+    <div class="blog-detail-hero" id="heroSection" style="display:none;">
+        <img id="heroImage" src="" alt="">
+        <div class="blog-detail-hero-overlay"></div>
+    </div>
+
+    <div class="blog-detail-container">
+        <!-- Geri Butonu -->
+        <a href="index.html" class="blog-detail-back" id="backBtn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+            </svg>
+            Back to Blog
+        </a>
+
+        <!-- Yükleniyor -->
+        <div id="loading" class="text-center py-5">
+            <div class="blog-skeleton" style="height: 200px; margin-bottom: 20px;"></div>
+            <div class="blog-skeleton" style="height: 40px; width: 60%; margin: 0 auto 15px;"></div>
+            <div class="blog-skeleton" style="height: 20px; width: 40%; margin: 0 auto;"></div>
+        </div>
+
+        <!-- Blog İçerik -->
+        <article id="blogContent" class="d-none" style="margin-bottom: 80px;">
+            <!-- Başlık Alanı -->
+            <div class="blog-detail-header" id="headerSection">
+                <div class="blog-detail-tags" id="postTags"></div>
+                <h1 class="blog-detail-title" id="postTitle"></h1>
+                <div class="blog-detail-meta">
+                    <span id="postDate"></span>
+                    <span class="dot"></span>
+                    <span id="postReadTime"></span>
+                </div>
+            </div>
+
+            <!-- İçerik Alanı -->
+            <div class="blog-detail-content" id="postBody"></div>
+
+            <!-- Alt Navigasyon -->
+            <div style="padding: 20px 40px 40px; background: #fff; border-radius: 0 0 20px 20px; border-top: 1px solid #f1f5f9;">
+                <div class="d-flex justify-content-between align-items-center flex-wrap gap-3">
+                    <a href="index.html" class="blog-card-read-more">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16" style="transform: rotate(180deg);">
+                            <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"/>
+                        </svg>
+                        All Posts
+                    </a>
+                    <div class="blog-card-tags" id="footerTags"></div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Yazı Bulunamadı -->
+        <div id="notFound" class="d-none text-center py-5">
+            <div class="blog-empty-state">
+                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                    <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+                </svg>
+                <h5>Post not found</h5>
+                <p>The blog post you're looking for doesn't exist.</p>
+                <a href="index.html" class="blog-detail-back" style="display: inline-flex; margin-top: 10px;">
+                    ← Back to Blog
+                </a>
+            </div>
+        </div>
+    </div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const postId = urlParams.get('id');
+
+    // Etiket-anahtar kelime eşleştirmesi (script.js ile aynı)
+    const tagImageKeywords = {
+        "education": "education classroom",
+        "technology": "technology laptop",
+        "science": "science laboratory",
+        "competition": "award trophy",
+        "teknofest": "aerospace technology",
+        "game-based-learning": "gaming controller",
+        "guide": "book reading",
+        "interactive": "digital interactive",
+        "personal": "journal writing",
+        "introduction": "hello welcome",
+        "coding": "programming code",
+        "research": "research data",
+        "ai": "artificial intelligence"
+    };
+
+    function getAutoImageUrl(post) {
+        if (post.image && post.image.trim() !== "") return post.image;
+        if (post.tags && post.tags.length > 0) {
+            for (const tag of post.tags) {
+                const keyword = tagImageKeywords[tag.toLowerCase()];
+                if (keyword) return `https://source.unsplash.com/1200x500/?${encodeURIComponent(keyword)}`;
+            }
+            return `https://source.unsplash.com/1200x500/?${encodeURIComponent(post.tags[0])}`;
+        }
+        const titleWords = post.title.split(" ").slice(0, 3).join(" ");
+        return `https://source.unsplash.com/1200x500/?${encodeURIComponent(titleWords)}`;
+    }
+
+    function formatDate(dateStr) {
+        try {
+            const d = new Date(dateStr);
+            if (isNaN(d)) return dateStr;
+            const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+            return `${months[d.getMonth()]} ${d.getDate()}, ${d.getFullYear()}`;
+        } catch { return dateStr; }
+    }
+
+    fetch('blog.json')
+        .then(response => response.json())
+        .then(data => {
+            const post = data.posts[postId];
+
+            if (!post) {
+                document.getElementById('loading').classList.add('d-none');
+                document.getElementById('notFound').classList.remove('d-none');
+                return;
+            }
+
+            // Sayfa başlığını güncelle
+            document.title = post.title + " — Blog";
+
+            // Hero görsel
+            const imageUrl = getAutoImageUrl(post);
+            const heroSection = document.getElementById('heroSection');
+            const heroImage = document.getElementById('heroImage');
+            heroImage.src = imageUrl;
+            heroImage.alt = post.title;
+            heroSection.style.display = 'block';
+            heroImage.onerror = function() { heroSection.style.display = 'none'; };
+
+            // Etiketler
+            const tagsHtml = (post.tags || []).map(t =>
+                `<span class="tag">${t}</span>`
+            ).join('');
+            document.getElementById('postTags').innerHTML = tagsHtml;
+
+            // Footer etiketler
+            const footerTagsHtml = (post.tags || []).map(t =>
+                `<span class="mini-tag">#${t}</span>`
+            ).join('');
+            document.getElementById('footerTags').innerHTML = footerTagsHtml;
+
+            // Başlık & Meta
+            document.getElementById('postTitle').textContent = post.title;
+            document.getElementById('postDate').textContent = '📅 ' + formatDate(post.date);
+            const readTime = post.readTime || Math.max(2, Math.ceil((post.body || "").split(" ").length / 200));
+            document.getElementById('postReadTime').textContent = '☕ ' + readTime + ' min read';
+
+            // İçerik (Markdown → HTML)
+            const bodyHtml = marked.parse(post.body || '<p><em>No content available.</em></p>');
+            document.getElementById('postBody').innerHTML = bodyHtml;
+
+            // Göster
+            document.getElementById('loading').classList.add('d-none');
+            document.getElementById('blogContent').classList.remove('d-none');
+
+            // Hero yoksa header'ın margin-top'ını ayarla
+            if (!imageUrl || heroSection.style.display === 'none') {
+                document.getElementById('headerSection').style.marginTop = '0';
+                document.getElementById('headerSection').style.borderRadius = '20px 20px 0 0';
+            }
+        })
+        .catch(() => {
+            document.getElementById('loading').classList.add('d-none');
+            document.getElementById('notFound').classList.remove('d-none');
+        });
+</script>
+</body>
+</html>
