@@ -190,6 +190,131 @@ body {
     transition: transform 0.2s ease;
 }
 
+/* === YATAY ZAMAN TÜNELİ (Education) === */
+.timeline-horizontal {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+    margin-top: 20px;
+}
+
+.timeline-horizontal::before {
+    content: '';
+    position: absolute;
+    top: 80px;
+    left: 10%;
+    right: 10%;
+    height: 3px;
+    background: #1e4a8b;
+    z-index: 1;
+}
+
+.timeline-step {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    text-align: center;
+    padding: 0 10px;
+}
+
+.timeline-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border: 2px solid #e2e8f0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.timeline-step:hover .timeline-icon-wrapper {
+    border-color: #1e4a8b;
+}
+
+.timeline-icon-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* === YATAY YAYIN KARTLARI === */
+.pub-cards-horizontal {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 15px 10px 30px 10px; /* Yanlardan gölge ve kenarlık için ekstra boşluk */
+    scrollbar-width: none; /* Firefox */
+}
+
+.pub-cards-horizontal::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+/* Eğer ileride 4. kart eklenirse ve scroll çıkarsa, en sağdaki kartın kesilmesini önler */
+.pub-cards-horizontal::after {
+    content: '';
+    display: block;
+    flex: 0 0 1px; /* 1 piksel genişlik ve gap değeri (20px) sayesinde son kartın sağında mükemmel bir boşluk yaratır */
+}
+
+.pub-card-item {
+    width: calc(50% - 10px); /* Kart genişliğini kesin olarak yarıya sabitler */
+    flex: 0 0 auto;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.pub-card-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(30, 74, 139, 0.1);
+    border-color: rgba(30, 74, 139, 0.2);
+}
+
+.pub-card-body {
+    padding: 24px;
+    flex-grow: 1;
+}
+
+.pub-card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.pub-card-footer {
+    padding: 0 24px 24px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 16px;
+    text-align: right;
+}
+
+.pub-card-link {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1e4a8b;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.pub-card-link:hover {
+    color: #163a6e;
+}
+
 .embedded-item:hover {
     transform: translateX(10px); /* Üzerine gelince hafif sağa kaysın */
     background: transparent !important;
@@ -200,6 +325,71 @@ body {
     background-color: #fff;
     border: 1px solid #e9ecef;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+/* === MOBİL GÖRÜNÜM DÜZENLEMELERİ === */
+@media (max-width: 768px) {
+    /* Eğitim Zaman Tüneli - Dikey Yapı */
+    .timeline-horizontal {
+        flex-direction: column;
+        gap: 40px;
+        padding: 20px 0;
+        align-items: center;
+    }
+
+    .timeline-horizontal::before {
+        top: 40px; /* 80px'lik ikonun merkezine göre ayarlandı */
+        bottom: 40px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 3px;
+        height: auto;
+        right: auto;
+        background: #1e4a8b;
+    }
+
+    .timeline-step {
+        text-align: left;
+        padding-left: calc(50% + 55px); /* Ekranın ortası + logonun yarısı + boşluk */
+        position: relative;
+        width: 100%;
+        min-height: 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .timeline-step p {
+        display: none !important; /* Kurum isimlerini mobilde gizle */
+    }
+
+    .timeline-step h6 {
+        color: #1e4a8b !important; /* Kurum ismiyle aynı renk */
+        font-size: 0.85rem !important;
+        margin-bottom: 0 !important;
+        font-weight: 700 !important;
+    }
+
+    .timeline-icon-wrapper {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 80px;
+        height: 80px;
+        margin: 0;
+    }
+
+    /* Seçili Yayınlar - Dikey Yapı */
+    .pub-cards-horizontal {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .pub-card-item {
+        min-width: 0;
+        width: 100%;
+    }
 }
 
 /* ============================================
@@ -359,7 +549,9 @@ body {
     line-height: 1.4;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
+    box-orient: vertical;
     overflow: hidden;
 }
 
@@ -380,7 +572,9 @@ body {
     flex: 1;
     display: -webkit-box;
     -webkit-line-clamp: 3;
+    line-clamp: 3;
     -webkit-box-orient: vertical;
+    box-orient: vertical;
     overflow: hidden;
     margin-bottom: 16px;
 }
