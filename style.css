@@ -2,16 +2,18 @@
 
 /* Google Font: Rajdhani (Teknik ve Modern Görünüm için) */
 body {
-  background-color: #f5f7fa; /* Daha yumuşak gri */
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  color: #2c3e50;
-  overflow-x: hidden; /* Animasyonlarda taşmayı önler */
+    background-color: #f5f7fa;
+    /* Daha yumuşak gri */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #2c3e50;
+    overflow-x: hidden;
+    /* Animasyonlarda taşmayı önler */
 }
 
 /* Özel Başlık Fontu */
 .rajdhani-bold {
-  font-family: "Rajdhani", sans-serif;
-  font-weight: 700;
+    font-family: "Rajdhani", sans-serif;
+    font-weight: 700;
 }
 
 /* === MARCO.FYI TARZI FLOATING NAVBAR === */
@@ -21,16 +23,16 @@ body {
     left: 50%;
     transform: translateX(-50%);
     z-index: 1050;
-    
+
     background: #ffffff;
     backdrop-filter: blur(12px) saturate(180%);
     -webkit-backdrop-filter: blur(12px) saturate(180%);
-    
+
     border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: 50px;
     padding: 6px;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.1);
-    
+
     display: flex;
     align-items: center;
     gap: 4px;
@@ -95,6 +97,7 @@ body {
         transform: translateY(30px) scale(0.98);
         filter: blur(4px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0) scale(1);
@@ -103,66 +106,84 @@ body {
 }
 
 /* Genel Tipografi ve Renkler */
-.text-primary { color: #1e4a8b !important; }
-.btn-primary {
-  background-color: #1e4a8b;
-  border-color: #1e4a8b;
-  transition: transform 0.2s;
+.text-primary {
+    color: #1e4a8b !important;
 }
+
+.bg-primary {
+    background-color: #1e4a8b !important;
+}
+
+.btn-primary {
+    background-color: #1e4a8b;
+    border-color: #1e4a8b;
+    transition: transform 0.2s;
+}
+
 .btn-primary:hover {
-  background-color: #163a6e;
-  transform: translateY(-2px);
+    background-color: #163a6e;
+    transform: translateY(-2px);
 }
 
 .edu-logo {
-  width: 70px;
-  height: 70px;
-  object-fit: contain;
-  padding: 10px;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    padding: 10px;
 }
 
 .btn-overview {
-  width: 16px;
-  height: 16px;
-  padding: 0;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 25%;
-  border: 0px solid rgba(30, 74, 139, 0.3); /* Daha silik bir kenarlık */
-  color: #1e4a8b;
-  background: transparent; /* Şeffaf arka plan */
-  transition: all 0.3s;
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25%;
+    border: 0px solid rgba(30, 74, 139, 0.3);
+    /* Daha silik bir kenarlık */
+    color: #1e4a8b;
+    background: transparent;
+    /* Şeffaf arka plan */
+    transition: all 0.3s;
 }
 
 .btn-overview:hover {
-  background-color: #1e4a8b;
-  color: white;
-  border-color: #1e4a8b;
-  transform: scale(1.1); /* Hafif büyüme efekti */
+    background-color: #1e4a8b;
+    color: white;
+    border-color: #1e4a8b;
+    transform: scale(1.1);
+    /* Hafif büyüme efekti */
 }
+
 .btn-overview:hover {
-  background-color: #1e4a8b;
-  color: white;
-  transform: rotate(15deg);
+    background-color: #1e4a8b;
+    color: white;
+    transform: rotate(15deg);
 }
 
 /* Responsive Navbar Ayarı */
 @media (max-width: 576px) {
     .floating-nav-container {
-        width: 90%;
-        justify-content: space-between;
-        padding: 5px;
+        top: 25px;
+        bottom: auto;
+        width: auto;
+        justify-content: center;
+        padding: 8px 12px;
+        gap: 8px;
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.15);
     }
+
     .nav-pill-link {
-        padding: 8px 16px;
-        font-size: 0.8rem;
+        padding: 8px 18px;
+        font-size: 0.95rem;
     }
 }
 
 .nav-pill-link.lang-btn {
     color: #4a5568;
 }
+
 .nav-pill-link.lang-btn:hover {
     color: #1e4a8b;
 }
@@ -171,7 +192,8 @@ body {
 
 /* Yeni Arka Plan Renkleri */
 .bg-soft-gray {
-    background-color: #f0f2f5; /* Gözü yormayan çok açık gri/mavi tonu */
+    background-color: #f0f2f5;
+    /* Gözü yormayan çok açık gri/mavi tonu */
 }
 
 .bg-white-pure {
@@ -183,7 +205,8 @@ body {
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
-    border-bottom: 1px solid rgba(0,0,0,0.05) !important; /* Çok hafif bir çizgi */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+    /* Çok hafif bir çizgi */
     padding-left: 0 !important;
     padding-right: 0 !important;
     border-radius: 0 !important;
@@ -249,23 +272,33 @@ body {
     display: flex;
     gap: 20px;
     overflow-x: auto;
-    padding: 15px 10px 30px 10px; /* Yanlardan gölge ve kenarlık için ekstra boşluk */
-    scrollbar-width: none; /* Firefox */
+    padding: 15px 10px 30px 10px;
+    /* Yanlardan gölge ve kenarlık için ekstra boşluk */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .pub-cards-horizontal::-webkit-scrollbar {
-    display: none; /* Chrome/Safari */
+    display: none;
+    /* Chrome/Safari */
 }
 
 /* Eğer ileride 4. kart eklenirse ve scroll çıkarsa, en sağdaki kartın kesilmesini önler */
 .pub-cards-horizontal::after {
     content: '';
     display: block;
-    flex: 0 0 1px; /* 1 piksel genişlik ve gap değeri (20px) sayesinde son kartın sağında mükemmel bir boşluk yaratır */
+    flex: 0 0 1px;
+    /* 1 piksel genişlik ve gap değeri (20px) sayesinde son kartın sağında mükemmel bir boşluk yaratır */
+}
+
+/* 3 kart yan yana (Projeler için) */
+.pub-cards-horizontal.three-cols .pub-card-item {
+    width: calc(33.333% - 14px);
 }
 
 .pub-card-item {
-    width: calc(50% - 10px); /* Kart genişliğini kesin olarak yarıya sabitler */
+    width: calc(50% - 10px);
+    /* 2 kart yan yana */
     flex: 0 0 auto;
     background: #ffffff;
     border: 1px solid #e2e8f0;
@@ -275,6 +308,7 @@ body {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    position: relative;
 }
 
 .pub-card-item:hover {
@@ -316,7 +350,8 @@ body {
 }
 
 .embedded-item:hover {
-    transform: translateX(10px); /* Üzerine gelince hafif sağa kaysın */
+    transform: translateX(10px);
+    /* Üzerine gelince hafif sağa kaysın */
     background: transparent !important;
 }
 
@@ -324,11 +359,12 @@ body {
 .edu-logo {
     background-color: #fff;
     border: 1px solid #e9ecef;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
 
 /* === MOBİL GÖRÜNÜM DÜZENLEMELERİ === */
 @media (max-width: 768px) {
+
     /* Eğitim Zaman Tüneli - Dikey Yapı */
     .timeline-horizontal {
         flex-direction: column;
@@ -338,7 +374,8 @@ body {
     }
 
     .timeline-horizontal::before {
-        top: 40px; /* 80px'lik ikonun merkezine göre ayarlandı */
+        top: 40px;
+        /* 80px'lik ikonun merkezine göre ayarlandı */
         bottom: 40px;
         left: 50%;
         transform: translateX(-50%);
@@ -350,7 +387,8 @@ body {
 
     .timeline-step {
         text-align: left;
-        padding-left: calc(50% + 55px); /* Ekranın ortası + logonun yarısı + boşluk */
+        padding-left: calc(50% + 55px);
+        /* Ekranın ortası + logonun yarısı + boşluk */
         position: relative;
         width: 100%;
         min-height: 80px;
@@ -360,11 +398,13 @@ body {
     }
 
     .timeline-step p {
-        display: none !important; /* Kurum isimlerini mobilde gizle */
+        display: none !important;
+        /* Kurum isimlerini mobilde gizle */
     }
 
     .timeline-step h6 {
-        color: #1e4a8b !important; /* Kurum ismiyle aynı renk */
+        color: #1e4a8b !important;
+        /* Kurum ismiyle aynı renk */
         font-size: 0.85rem !important;
         margin-bottom: 0 !important;
         font-weight: 700 !important;
@@ -386,7 +426,8 @@ body {
         gap: 16px;
     }
 
-    .pub-card-item {
+    .pub-card-item,
+    .pub-cards-horizontal.three-cols .pub-card-item {
         min-width: 0;
         width: 100%;
     }
@@ -645,12 +686,29 @@ body {
     animation: blogCardIn 0.5s ease forwards;
 }
 
-.blog-card-col:nth-child(1) { animation-delay: 0.05s; }
-.blog-card-col:nth-child(2) { animation-delay: 0.1s; }
-.blog-card-col:nth-child(3) { animation-delay: 0.15s; }
-.blog-card-col:nth-child(4) { animation-delay: 0.2s; }
-.blog-card-col:nth-child(5) { animation-delay: 0.25s; }
-.blog-card-col:nth-child(6) { animation-delay: 0.3s; }
+.blog-card-col:nth-child(1) {
+    animation-delay: 0.05s;
+}
+
+.blog-card-col:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.blog-card-col:nth-child(3) {
+    animation-delay: 0.15s;
+}
+
+.blog-card-col:nth-child(4) {
+    animation-delay: 0.2s;
+}
+
+.blog-card-col:nth-child(5) {
+    animation-delay: 0.25s;
+}
+
+.blog-card-col:nth-child(6) {
+    animation-delay: 0.3s;
+}
 
 @keyframes blogCardIn {
     to {
@@ -669,8 +727,13 @@ body {
 }
 
 @keyframes shimmer {
-    0% { background-position: -200% 0; }
-    100% { background-position: 200% 0; }
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
 }
 
 /* Boş blog durumu */
@@ -715,7 +778,7 @@ body {
 .blog-detail-hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 60%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
 }
 
 .blog-detail-header {
@@ -725,7 +788,7 @@ body {
     padding: 40px;
     background: #fff;
     border-radius: 20px 20px 0 0;
-    box-shadow: 0 -10px 40px rgba(0,0,0,0.05);
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.05);
 }
 
 .blog-detail-tags {
@@ -888,16 +951,20 @@ body {
     .blog-detail-hero {
         height: 250px;
     }
+
     .blog-detail-header {
         padding: 24px;
         margin-top: -60px;
     }
+
     .blog-detail-title {
         font-size: 1.6rem;
     }
+
     .blog-detail-content {
         padding: 20px 24px;
     }
+
     .blog-card-image-wrapper {
         height: 160px;
     }
@@ -907,6 +974,7 @@ body {
     .blog-filters {
         gap: 6px;
     }
+
     .blog-filter-btn {
         padding: 5px 12px;
         font-size: 0.75rem;
@@ -951,13 +1019,25 @@ body {
 }
 
 @keyframes music-pulse {
-    0%, 100% { box-shadow: 0 4px 15px rgba(30, 74, 139, 0.4); }
-    50% { box-shadow: 0 4px 28px rgba(30, 74, 139, 0.7); }
+
+    0%,
+    100% {
+        box-shadow: 0 4px 15px rgba(30, 74, 139, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 4px 28px rgba(30, 74, 139, 0.7);
+    }
 }
 
 @keyframes music-playing {
-    0% { transform: scale(1); }
-    100% { transform: scale(1.08); }
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(1.08);
+    }
 }
 
 /* Music Sidebar iframe */
@@ -971,12 +1051,14 @@ body {
     #musicSidebar {
         width: 100% !important;
     }
+
     .music-fab {
         bottom: 20px;
         right: 20px;
         width: 50px;
         height: 50px;
     }
+
     .music-fab svg {
         width: 20px;
         height: 20px;
@@ -1215,13 +1297,16 @@ body {
     .site-footer {
         padding: 40px 0 20px;
     }
+
     .site-footer .col-lg-5,
     .site-footer .col-lg-7 {
         text-align: center !important;
     }
+
     .site-footer .d-flex.flex-column {
         align-items: center !important;
     }
+
     .project-card-simple {
         border-left-width: 3px;
     }
@@ -1245,6 +1330,7 @@ body {
     transition: all 0.3s ease;
     text-decoration: none;
 }
+
 .social-link-light:hover {
     background: rgba(30, 74, 139, 0.2);
     color: #163a6e;
