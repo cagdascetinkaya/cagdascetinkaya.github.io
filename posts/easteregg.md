@@ -16,7 +16,7 @@ Fun and Culture: Sometimes it’s a reference to a movie scene, sometimes a refl
 
 
 
-### **  "Easter Egg" Nedir?**
+###   **/"Easter Egg" Nedir?**
 
 En basit tanımıyla Easter Egg; bir yazılım, oyun, film veya web sitesine geliştiriciler tarafından kasıtlı olarak yerleştirilen gizli mesajlar, oyunlar, özellikler veya şakalardır. Genellikle standart bir kullanıcı arayüzünde görünmezler; genellikle belirli bir tuş kombinasyonu, özel bir komut dizisi veya çok spesifik bir kullanıcı etkileşimiyle ortaya çıkarlar.
 
