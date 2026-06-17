@@ -66,4 +66,39 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         })
         .catch(err => console.error("blog.json okunamadı:", err));
+
+    // --- Easter Egg Trigger (Secret Page) ---
+    const profilePics = document.querySelectorAll('#about img[src="img/pp.png"]');
+    let clickCount = 0;
+    let clickTimer;
+
+    profilePics.forEach(pic => {
+        // İpucu vermek için cursor'u değiştirebiliriz ama belli etmemek daha iyi olabilir
+        pic.title = "???"; // Ufak bir ipucu
+        pic.addEventListener('click', function() {
+            clickCount++;
+            
+            // Tıklama efekti (titreme/küçülme)
+            pic.style.transition = 'transform 0.1s';
+            pic.style.transform = `scale(${1 - clickCount * 0.03})`;
+            setTimeout(() => { pic.style.transform = 'scale(1)'; }, 100);
+
+            if (clickCount >= 7) {
+                clickCount = 0; // Reset
+                // Matrix/Glitch efekti ile geçiş
+                document.body.style.transition = 'all 0.8s ease';
+                document.body.style.filter = 'invert(1) hue-rotate(180deg) blur(2px)';
+                
+                setTimeout(() => {
+                    window.location.href = 'secret.html';
+                }, 800);
+            }
+
+            // Seri tıklanmazsa sayacı sıfırla
+            clearTimeout(clickTimer);
+            clickTimer = setTimeout(() => {
+                clickCount = 0;
+            }, 1500); 
+        });
+    });
 });
