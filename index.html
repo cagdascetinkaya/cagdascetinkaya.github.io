@@ -865,7 +865,7 @@
         </div>
     </div>
 
-    <button class="music-fab" type="button" data-bs-toggle="offcanvas" data-bs-target="#musicSidebar"
+    <button class="music-fab" type="button" data-bs-toggle="offcanvas" data-bs-target="#musicidebar"
         aria-label="Open Music Player">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
             class="bi bi-music-note-beamed" viewBox="0 0 16 16">
@@ -876,7 +876,7 @@
         </svg>
     </button>
 
-    <div class="offcanvas offcanvas-end border-0" tabindex="-1" id="musicSidebar"
+    <div class="offcanvas offcanvas-end border-0" tabindex="-1" id="musicidebar"
         style="width: 380px; background: rgba(250, 250, 252, 0.95); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border-radius: 24px 0 0 24px; box-shadow: -10px 0 40px rgba(0,0,0,0.08);">
         <div class="offcanvas-header border-0 px-4 py-4">
             <h5 class="offcanvas-title fw-bold d-flex align-items-center mb-0 text-dark"
@@ -957,7 +957,7 @@
 
         // Predefined Playlist Logic
         (function () {
-            const musicSidebar = document.getElementById('musicSidebar');
+            const musicidebar = document.getElementById('musicidebar');
             const musicFab = document.querySelector('.music-fab');
             const audioPlayer = document.getElementById('localAudioPlayer');
             const playlist = document.getElementById('localPlaylist');
@@ -965,25 +965,25 @@
 
             // Add your GitHub hosted mp3 files here
             const files = [
-                { name: "Requiem in D Minor, (Mass No. 19), K. 626: III. Sequenz VI. Lacrimosa", url: "assets/musics/lacrimosa.mp3" },
-                { name: "Champion Soundtrack - Kindred", url: "assets/musics/kindred.mp3" },
-                { name: "Sevda Kuşun Kanadında", url: "assets/musics/sevdakusunkanadinda.mp3" },
-                { name: "Habanera", url: "assets/musics/carmen.mp3" },
-                { name: "Champion Soundtrack - Taliyah", url: "assets/musics/taliyah.mp3" },
-                { name: "Merhametsiz", url: "assets/musics/merhametsiz.mp3" },
-                { name: "Carol of the Bells", url: "assets/musics/coftb.mp3" },
-                { name: "Origin134", url: "assets/musics/origin134.mp3" },
-                { name: "Aksak", url: "assets/musics/aksak.mp3" },
-                { name: "Ain't No Sunshine", url: "assets/musics/aintnosunshine.mp3" },
-                { name: "Balçova", url: "assets/musics/balcova.mp3" },
-                { name: "Não Adianta", url: "assets/musics/naoadianta.mp3" },
-                { name: "La Rose Êternelle", url: "assets/musics/larose.mp3" },
-                { name: "Comes You Again", url: "assets/musics/comesyouare.mp3" },
+                { name: "Requiem in D Minor, (Mass No. 19), K. 626: III. Sequenz VI. Lacrimosa", url: "assets/music/lacrimosa.mp3" },
+                { name: "Champion Soundtrack - Kindred", url: "assets/music/kindred.mp3" },
+                { name: "Sevda Kuşun Kanadında", url: "assets/music/sevdakusunkanadinda.mp3" },
+                { name: "Habanera", url: "assets/music/carmen.mp3" },
+                { name: "Champion Soundtrack - Taliyah", url: "assets/music/taliyah.mp3" },
+                { name: "Merhametsiz", url: "assets/music/merhametsiz.mp3" },
+                { name: "Carol of the Bells", url: "assets/music/coftb.mp3" },
+                { name: "Origin134", url: "assets/music/origin134.mp3" },
+                { name: "Aksak", url: "assets/music/aksak.mp3" },
+                { name: "Ain't No Sunshine", url: "assets/music/aintnosunshine.mp3" },
+                { name: "Balçova", url: "assets/music/balcova.mp3" },
+                { name: "Não Adianta", url: "assets/music/naoadianta.mp3" },
+                { name: "La Rose Êternelle", url: "assets/music/larose.mp3" },
+                { name: "Comes You Again", url: "assets/music/comesyouare.mp3" },
             ];
 
             let currentTrack = 0;
 
-            if (musicSidebar && musicFab && audioPlayer && playlist) {
+            if (musicidebar && musicFab && audioPlayer && playlist) {
                 audioPlayer.addEventListener('play', () => musicFab.classList.add('playing'));
                 audioPlayer.addEventListener('pause', () => musicFab.classList.remove('playing'));
                 audioPlayer.addEventListener('ended', () => {
@@ -999,7 +999,7 @@
                 function renderPlaylist() {
                     playlist.innerHTML = '';
                     if (files.length === 0) {
-                        playlist.innerHTML = '<li class="text-muted fst-italic py-3 text-center">No songs available in assets/musics/</li>';
+                        playlist.innerHTML = '<li class="text-muted fst-italic py-3 text-center">No songs available in assets/music/</li>';
                         return;
                     }
 
