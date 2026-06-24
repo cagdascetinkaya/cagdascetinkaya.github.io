@@ -34,7 +34,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     
                     // JSON'da resim veya başlık unutulursa diye yedek veriler
                     const postTitle = post.title || "İsimsiz Yazı";
-                    const postImage = post.image || "img/blog64.png"; 
 
                     const itemDiv = document.createElement('div');
                     itemDiv.className = 'accordion-item'; 
@@ -43,8 +42,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     itemDiv.innerHTML = `
                         <h2 class="accordion-header">
                         <button class="accordion-button collapsed bg-white py-3 d-flex align-items-center shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}">
-                            
-                            <img src="${postImage}" class="rounded-3 me-3 object-fit-cover" style="width: 64px; height: 64px;" alt="Post Thumbnail">
                             
                             <div class="text-start">
                                 <h4 class="mb-0 fw-bold rajdhani-bold text-dark fs-4">${postTitle}</h4>
