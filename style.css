@@ -350,7 +350,7 @@ body {
 }
 
 .embedded-item:hover {
-    transform: translateX(10px);
+    transform: none;
     /* Üzerine gelince hafif sağa kaysın */
     background: transparent !important;
 }
@@ -878,4 +878,9 @@ body {
 
 #blogAccordion .accordion-button:not(.collapsed) {
     border-radius: 12px 12px 0 0 !important;
+}
+
+/* Prevent layout shift when vertical scrollbar appears (stable gutter) */
+html {
+    scrollbar-gutter: stable;
 }
