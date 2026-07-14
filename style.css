@@ -443,7 +443,7 @@ body {
     height: 56px;
     border-radius: 50%;
     border: none;
-    background: linear-gradient(135deg, #1e4a8b, #3a7bd5);
+    background: linear-gradient(135deg, #1e4a8b, #1e4a8b);
     color: white;
     display: flex;
     align-items: center;
