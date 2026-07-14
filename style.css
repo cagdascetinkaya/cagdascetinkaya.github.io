@@ -465,8 +465,8 @@ body {
 }
 
 .music-fab.playing {
-    background: linear-gradient(135deg, #e74c3c, #c0392b);
-    box-shadow: 0 4px 18px rgba(231, 76, 60, 0.5);
+    background: linear-gradient(135deg, #1e4a8b, #1e4a8b);
+    box-shadow: 0 4px 18px rgba(44, 43, 43, 0.5);
     animation: music-playing 0.8s ease-in-out infinite alternate;
 }
 
