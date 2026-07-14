@@ -10,7 +10,7 @@
 
 **Or so I hope.**
 
-**By the way, I write in two languages.**
+**I, by the way, write in two languages.**
 
 **Selamlar.**
 
