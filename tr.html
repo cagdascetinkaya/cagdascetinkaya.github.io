@@ -88,13 +88,19 @@
         <!-- ===== Bölüm 1: Akademik Geçmiş (beyaz) ===== -->
         <section class="about-section pb-5" style="background: #ffffff; padding-top: 0;">
             <div class="container px-4 px-md-5 fade-in-up" style="padding-top: 100px; max-width: 900px;">
-                <div class="text-center mb-5">
-                    <h2 class="text-primary fw-bold display-5 rajdhani-bold">Akademik Geçmiş</h2>
+                <div class="section-head text-center mb-5 collapsed" role="button" tabindex="0"
+                    data-bs-toggle="collapse" data-bs-target="#panelAcademic" aria-expanded="false"
+                    aria-controls="panelAcademic">
+                    <h2 class="text-primary fw-bold display-5 rajdhani-bold section-head-title">
+                        Akademik Geçmiş<span class="section-chevron" aria-hidden="true"></span>
+                    </h2>
                     <p class="text-secondary" style="font-size: 0.9rem;">
                         Fen Eğitimi, Aşılama Kuramı, Kavram Yanılgısı Temelli Öğretim, Nicel Veri Analizi, Hipotez
                         Testleri ve Veri Görselleştirme uzmanlık alanlarımdan bazıları.
                     </p>
                 </div>
+
+                <div class="collapse" id="panelAcademic">
 
                 <!-- Eğitim Zaman Tüneli -->
                 <div class="mb-5">
@@ -179,19 +185,27 @@
                     </div>
                 </div>
 
+                </div><!-- /#panelAcademic -->
+
             </div>
         </section>
 
         <!-- ===== Bölüm 2: Uzmanlık ve Teknoloji (gri) ===== -->
         <section class="about-section py-5" style="background: #f0f2f5;">
             <div class="container px-4 px-md-5 fade-in-up" style="max-width: 900px;">
-                <div class="text-center mb-5">
-                    <h2 class="text-primary fw-bold display-5 rajdhani-bold">Uzmanlık ve Teknoloji</h2>
+                <div class="section-head text-center mb-5 collapsed" role="button" tabindex="0"
+                    data-bs-toggle="collapse" data-bs-target="#panelExpertise" aria-expanded="false"
+                    aria-controls="panelExpertise">
+                    <h2 class="text-primary fw-bold display-5 rajdhani-bold section-head-title">
+                        Uzmanlık ve Teknoloji<span class="section-chevron" aria-hidden="true"></span>
+                    </h2>
                     <p class="text-secondary" style="font-size: 0.9rem;">
                         Etkileşimli, veri odaklı eğitim uygulamaları geliştirmek için akademik araştırma metodolojisini
                         modern yazılım geliştirme ile harmanlıyorum.
                     </p>
                 </div>
+
+                <div class="collapse" id="panelExpertise">
 
                 <div class="row g-4 g-lg-5">
                     <div class="col-lg-8 d-flex flex-column">
@@ -321,13 +335,25 @@
                         </button>
                     </div>
                 </div>
+
+                </div><!-- /#panelExpertise -->
             </div>
         </section>
 
         <!-- ===== Bölüm: İlham Verici Sözler (beyaz) ===== -->
         <section class="about-section" style="background: #ffffff; padding-top: 80px; padding-bottom: 40px;">
             <div class="container px-4 px-md-5 fade-in-up" style="max-width: 900px;">
-                <div class="text-center">
+                <div class="section-head text-center mb-5 collapsed" role="button" tabindex="0"
+                    data-bs-toggle="collapse" data-bs-target="#panelQuotes" aria-expanded="false"
+                    aria-controls="panelQuotes">
+                    <h2 class="text-primary fw-bold display-5 rajdhani-bold section-head-title">
+                        İlham Veren Sözler<span class="section-chevron" aria-hidden="true"></span>
+                    </h2>
+                    <p class="text-secondary" style="font-size: 0.9rem;">
+                        Eğitim, araştırma ve severek çalışmak üzerine birkaç satır.
+                    </p>
+                </div>
+                <div class="collapse text-center" id="panelQuotes">
                     <div class="mx-auto position-relative" style="max-width: 900px;">
                         <div id="quotesCarouselTr" class="carousel slide" data-bs-ride="carousel"
                             data-bs-interval="5000">
@@ -398,12 +424,17 @@
         <!-- ===== Bölüm 3: İletişim (gri) ===== -->
         <section class="about-section py-5" style="background: #f0f2f5;">
             <div class="container px-4 px-md-5 fade-in-up" style="max-width: 900px;">
-                <div class="text-center mb-5">
-                    <h2 class="text-primary fw-bold display-5 rajdhani-bold">İletişim</h2>
+                <div class="section-head text-center mb-5 collapsed" role="button" tabindex="0"
+                    data-bs-toggle="collapse" data-bs-target="#panelContact" aria-expanded="false"
+                    aria-controls="panelContact">
+                    <h2 class="text-primary fw-bold display-5 rajdhani-bold section-head-title">
+                        İletişim<span class="section-chevron" aria-hidden="true"></span>
+                    </h2>
                     <p class="text-secondary" style="font-size: 0.9rem;">
                         İş birlikleri, akademik sorular veya sadece merhaba demek için çekinmeden yazabilirsiniz.
                     </p>
                 </div>
+                <div class="collapse" id="panelContact">
                 <div class="row g-4 g-lg-5 align-items-stretch">
 
                     <!-- Profil -->
@@ -466,6 +497,7 @@
                     </div>
 
                 </div>
+                </div><!-- /#panelContact -->
                 <div class="d-flex justify-content-center w-100 gap-4 mt-5 pt-4"
                     style="border-top: 1px solid rgba(0,0,0,0.06);">
                     <a href="https://github.com/cagdascetinkaya" target="_blank" class="social-link-light"

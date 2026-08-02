@@ -32,24 +32,36 @@ document.addEventListener("DOMContentLoaded", function() {
                     const htmlContent = marked.parse(markdownText);
                     const collapseId = `collapse_${i}`;
                     
-                    // JSON'da resim veya başlık unutulursa diye yedek veriler
+                    // JSON'da resim, tarih veya başlık unutulursa diye yedek veriler
                     const postTitle = post.title || "İsimsiz Yazı";
+                    const postDate = post.date || "";
+
+                    // Tarih varsa takvim ikonlu bir etiket olarak göster
+                    const dateHtml = postDate ? `
+                                <span class="blog-date">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                        fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5M1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4z"/>
+                                    </svg>
+                                    <time>${postDate}</time>
+                                </span>` : '';
 
                     const itemDiv = document.createElement('div');
-                    itemDiv.className = 'accordion-item'; 
-                    
+                    itemDiv.className = 'accordion-item';
+
                     // Açılır kapanır buton ve içerik HTML'i
                     itemDiv.innerHTML = `
                         <h2 class="accordion-header">
                         <button class="accordion-button collapsed bg-white py-3 d-flex align-items-center shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}">
-                            
+
                             <div class="text-start">
                                 <h4 class="mb-0 fw-bold rajdhani-bold text-dark fs-4">${postTitle}</h4>
+                                ${dateHtml}
                             </div>
-                            
+
                         </button>
                         </h2>
-                        
+
                         <div id="${collapseId}" class="accordion-collapse collapse" data-bs-parent="#blogAccordion">
                         <div class="accordion-body bg-soft-gray p-4 markdown-body text-dark">
                             ${htmlContent}
@@ -96,6 +108,30 @@ document.addEventListener("DOMContentLoaded", function() {
             clickTimer = setTimeout(() => {
                 clickCount = 0;
             }, 1500); 
+        });
+    });
+});
+
+/* ===== Açılır/kapanır bölüm başlıkları (klavye desteği + açılınca kaydırma) ===== */
+document.addEventListener("DOMContentLoaded", function () {
+    const heads = document.querySelectorAll('.section-head[data-bs-toggle="collapse"]');
+
+    heads.forEach(head => {
+        // Div olduğu için Enter / Space tuşlarını elle bağlıyoruz
+        head.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ' || e.key === 'Spacebar') {
+                e.preventDefault();
+                head.click();
+            }
+        });
+
+        const panel = document.querySelector(head.getAttribute('data-bs-target'));
+        if (!panel) return;
+
+        // Panel açıldığında başlığı görünür alana getir (üstteki yüzen menüye pay bırak)
+        panel.addEventListener('shown.bs.collapse', function () {
+            const top = head.getBoundingClientRect().top + window.pageYOffset - 100;
+            window.scrollTo({ top: top, behavior: 'smooth' });
         });
     });
 });

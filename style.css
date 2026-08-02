@@ -880,6 +880,71 @@ body {
     border-radius: 12px 12px 0 0 !important;
 }
 
+/* --- Blog kartları: açılır bölüm başlıklarıyla aynı dil --- */
+#blogAccordion .accordion-item {
+    border: 1px solid rgba(30, 74, 139, 0.10) !important;
+}
+
+#blogAccordion .accordion-item:hover {
+    box-shadow: 0 6px 18px rgba(30, 74, 139, 0.12);
+    border-color: rgba(30, 74, 139, 0.22) !important;
+}
+
+#blogAccordion .accordion-button {
+    gap: 22px;
+    justify-content: space-between;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    transition: background-color 0.2s ease;
+}
+
+#blogAccordion .accordion-button:hover {
+    background-color: rgba(30, 74, 139, 0.05) !important;
+}
+
+#blogAccordion .accordion-button:not(.collapsed) {
+    background-color: rgba(30, 74, 139, 0.05) !important;
+    color: inherit;
+}
+
+#blogAccordion .accordion-button:focus-visible {
+    outline: 2px solid #1e4a8b;
+    outline-offset: -2px;
+}
+
+/* Bootstrap'in varsayılan ok ikonu yerine bölüm başlıklarındaki ok */
+#blogAccordion .accordion-button::after {
+    background-image: none !important;
+    width: 0.5rem;
+    height: 0.5rem;
+    flex: 0 0 auto;
+    margin-left: 0;
+    margin-right: 6px;
+    border-right: 3px solid #1e4a8b;
+    border-bottom: 3px solid #1e4a8b;
+    transform: rotate(45deg) translate(-2px, -2px);
+    transition: transform 0.3s ease;
+}
+
+#blogAccordion .accordion-button:not(.collapsed)::after {
+    transform: rotate(-135deg) translate(-2px, -2px);
+}
+
+/* Yazı tarihi etiketi */
+.blog-date {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-top: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #5a6472;
+}
+
+.blog-date svg {
+    opacity: 0.85;
+}
+
 /* Prevent layout shift when vertical scrollbar appears (stable gutter) */
 html {
     scrollbar-gutter: stable;
@@ -929,4 +994,62 @@ html {
 
 #about .progress-bar {
     border: 1px solid #dee2e6;
+}
+
+/* ===== Tıklanabilir (açılır/kapanır) bölüm başlıkları ===== */
+.section-head {
+    cursor: pointer;
+    padding: 12px 8px;
+    border-radius: 14px;
+    transition: background-color 0.2s ease, margin-bottom 0.3s ease;
+    user-select: none;
+}
+
+.section-head:hover,
+.section-head:focus-visible {
+    background-color: rgba(30, 74, 139, 0.05);
+}
+
+.section-head:focus-visible {
+    outline: 2px solid #1e4a8b;
+    outline-offset: 2px;
+}
+
+.section-head .section-head-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 22px;
+    margin-bottom: 0.5rem;
+}
+
+/* Ok işareti: renk körü kullanıcılar için bilgi renkle değil şekille verilir */
+.section-chevron {
+    display: inline-block;
+    width: 0.55em;
+    height: 0.55em;
+    border-right: 3px solid currentColor;
+    border-bottom: 3px solid currentColor;
+    transform: rotate(45deg);
+    transform-origin: center;
+    transition: transform 0.3s ease;
+    flex: 0 0 auto;
+    margin-top: -0.25em;
+}
+
+/* Açıkken ok yukarı bakar */
+.section-head:not(.collapsed) .section-chevron {
+    transform: rotate(-135deg);
+    margin-top: 0.15em;
+}
+
+/* Kapalıyken başlık altındaki boşluğu küçült */
+.section-head.collapsed {
+    margin-bottom: 0 !important;
+}
+
+@media (max-width: 576px) {
+    .section-head .section-head-title {
+        gap: 14px;
+    }
 }
