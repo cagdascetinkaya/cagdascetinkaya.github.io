@@ -8,7 +8,7 @@ Bugün blog sistemimi güncelledim. Artık **JSON** ile uğraşmıyorum!
 * Resim eklemek çok kolay.
 * Kod yazmak çok zevkli.
 
-![Örnek Resim](img/cc_blog.png)
+![Örnek Resim](img/cc_blog.webp)
 
 The relationship between the two is complex, and it has played a huge role in getting us to where we are today.
 
