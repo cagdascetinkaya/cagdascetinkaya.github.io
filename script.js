@@ -29,6 +29,10 @@ document.addEventListener("DOMContentLoaded", function() {
                     // .md içindeki varsayılan h1 başlığını siliyoruz (Çünkü artık butonda yazacak)
                     markdownText = markdownText.replace(/^#\s+(.*)\n/, ''); 
                     
+                    // Kısa özet: ilk paragraf, markdown işaretleri temizlenmiş
+                    const excerptSrc = markdownText.split(/\n\s*\n/).map(t => t.trim()).find(t => t && !t.startsWith('#') && !t.startsWith('!')) || '';
+                    const excerpt = excerptSrc.replace(/[#*_>`\[\]()!]/g, '').replace(/\s+/g, ' ').slice(0, 140) + (excerptSrc.length > 140 ? '…' : '');
+
                     const htmlContent = marked.parse(markdownText);
                     const collapseId = `collapse_${i}`;
                     
@@ -43,8 +47,10 @@ document.addEventListener("DOMContentLoaded", function() {
                         <h2 class="accordion-header">
                         <button class="accordion-button collapsed bg-white py-3 d-flex align-items-center shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}">
                             
-                            <div class="text-start">
+                            <div class="text-start w-100">
                                 <h4 class="mb-0 fw-bold rajdhani-bold text-dark fs-4">${postTitle}</h4>
+                                ${post.date ? `<div class="post-date mt-1">${post.date}</div>` : ''}
+                                ${excerpt ? `<p class="post-excerpt mb-0 mt-1 d-none d-sm-block">${excerpt}</p>` : ''}
                             </div>
                             
                         </button>

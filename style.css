@@ -884,3 +884,77 @@ body {
 html {
     scrollbar-gutter: stable;
 }
+
+/* ===== 2026 design refresh ===== */
+
+/* Slightly darker secondary text for better contrast */
+.text-secondary {
+    --bs-secondary-rgb: 85, 96, 110;
+}
+
+/* Skill level label inside badges */
+.skill-level {
+    color: #1e4a8b;
+    font-weight: 700;
+    margin-left: .35rem;
+}
+
+/* Anchor jumps clear the floating nav */
+.about-section,
+.content-section {
+    scroll-margin-top: 90px;
+}
+
+/* Equal-height project cards */
+.pub-card-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.pub-card-body {
+    flex-grow: 1;
+}
+
+/* Footer */
+.site-footer {
+    background: #0f2f5c;
+}
+
+.footer-link {
+    color: #dbe5f5;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: .9rem;
+}
+
+.footer-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-muted {
+    color: #9fb2d1;
+}
+
+/* Blog accordion meta */
+.post-date {
+    font-size: .78rem;
+    color: #6b7686;
+    letter-spacing: .02em;
+}
+
+.post-excerpt {
+    font-size: .85rem;
+    color: #55606e;
+    max-width: 60ch;
+}
+
+/* Music FAB: smaller & clear of content on phones */
+@media (max-width: 576px) {
+    .music-fab {
+        width: 48px;
+        height: 48px;
+        right: 14px;
+        bottom: 14px;
+    }
+}
