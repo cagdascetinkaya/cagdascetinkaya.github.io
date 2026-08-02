@@ -250,8 +250,8 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0 auto 20px;
-    border: 2px solid #e2e8f0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border: 2px solid rgba(30, 74, 139, 0.10);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     overflow: hidden;
     transition: all 0.3s ease;
     cursor: pointer;
@@ -265,6 +265,15 @@ body {
     width: 100%;
     height: 100%;
     object-fit: contain;
+    /* Logolar renksizleştirilip Expertise bölümünün soğuk gri (#f0f2f5) ailesine
+       çekilir; üzerine gelince kurumun gerçek renkleri geri döner. */
+    filter: grayscale(1) sepia(0.18) hue-rotate(180deg) saturate(0.5) contrast(0.9) brightness(1.06);
+    transition: filter 0.35s ease;
+}
+
+.timeline-step:hover .timeline-icon-wrapper img,
+.timeline-icon-wrapper:focus-visible img {
+    filter: none;
 }
 
 /* === YATAY YAYIN KARTLARI === */
@@ -300,10 +309,11 @@ body {
     width: calc(50% - 10px);
     /* 2 kart yan yana */
     flex: 0 0 auto;
-    background: #f8f9fa;
-    border: 1px solid #e2e8f0;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    /* .stack-panel ile aynı yüzey dili */
+    background: #ffffff;
+    border: 1px solid rgba(30, 74, 139, 0.10);
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     display: flex;
     flex-direction: column;
@@ -312,9 +322,9 @@ body {
 }
 
 .pub-card-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(30, 74, 139, 0.1);
-    border-color: rgba(30, 74, 139, 0.2);
+    transform: translateY(-4px);
+    box-shadow: 0 6px 18px rgba(30, 74, 139, 0.12);
+    border-color: rgba(30, 74, 139, 0.22);
 }
 
 .pub-card-body {
@@ -986,14 +996,95 @@ html {
     }
 }
 
-/* Progress bars: badge'lerle aynı renkte ince çerçeve */
+/* ===== Expertise & Tech Stack: ortak yüzey dili =====
+   Web Development, App Cloud ve Sample Projects aynı kart diline uyar:
+   beyaz zemin, aynı çerçeve/köşe/gölge, aynı hover davranışı. */
+/* Web Development ve App Cloud blokları zeminsiz: doğrudan bölüm zemininde durur */
+.stack-panel {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+}
+
+/* Üç alt bölümün başlığı tek tip */
+.stack-panel-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #5a6472;
+    text-align: center;
+    margin: 0 0 20px;
+}
+
+/* --- Web Development: beceri satırları --- */
+.skill-row {
+    margin-bottom: 20px;
+}
+
+.skill-row:last-child {
+    margin-bottom: 0;
+}
+
+.skill-row-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 6px;
+}
+
+.skill-name {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #2c3e50;
+}
+
+.skill-level {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #5a6472;
+    white-space: nowrap;
+}
+
+/* Çubuğun oluğu bölüm zemininde; dolan kısım etiketlerle aynı beyaz malzeme */
 #about .progress {
-    border: 1px solid #dee2e6;
-    background-color: #ffffff;
+    border: 1px solid rgba(30, 74, 139, 0.10);
+    background-color: #f0f2f5;
 }
 
 #about .progress-bar {
-    border: 1px solid #dee2e6;
+    border: none;
+    /* Etiketlerin zemin rengiyle aynı; genişlik HTML'de inline kalır */
+    background-color: #ffffff;
+}
+
+/* --- App Cloud: sayfanın üzerine bırakılmış düğme gibi etiketler --- */
+.tech-chips {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.tech-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 9px 16px;
+    border: 1px solid rgba(30, 74, 139, 0.10);
+    border-radius: 50px;
+    background: #ffffff;
+    color: #2c3e50;
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.2;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.07);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.tech-chip:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(30, 74, 139, 0.14);
+    border-color: rgba(30, 74, 139, 0.22);
 }
 
 /* ===== Tıklanabilir (açılır/kapanır) bölüm başlıkları ===== */
