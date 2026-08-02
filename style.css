@@ -892,12 +892,6 @@ html {
     --bs-secondary-rgb: 85, 96, 110;
 }
 
-/* Skill level label inside badges */
-.skill-level {
-    color: #1e4a8b;
-    font-weight: 700;
-    margin-left: .35rem;
-}
 
 /* Anchor jumps clear the floating nav */
 .about-section,
@@ -915,39 +909,7 @@ html {
     flex-grow: 1;
 }
 
-/* Footer */
-.site-footer {
-    background: #0f2f5c;
-}
 
-.footer-link {
-    color: #dbe5f5;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: .9rem;
-}
-
-.footer-link:hover {
-    color: #ffffff;
-    text-decoration: underline;
-}
-
-.footer-muted {
-    color: #9fb2d1;
-}
-
-/* Blog accordion meta */
-.post-date {
-    font-size: .78rem;
-    color: #6b7686;
-    letter-spacing: .02em;
-}
-
-.post-excerpt {
-    font-size: .85rem;
-    color: #55606e;
-    max-width: 60ch;
-}
 
 /* Music FAB: smaller & clear of content on phones */
 @media (max-width: 576px) {
@@ -957,4 +919,14 @@ html {
         right: 14px;
         bottom: 14px;
     }
+}
+
+/* Progress bars: badge'lerle aynı renkte ince çerçeve */
+#about .progress {
+    border: 1px solid #dee2e6;
+    background-color: #ffffff;
+}
+
+#about .progress-bar {
+    border: 1px solid #dee2e6;
 }

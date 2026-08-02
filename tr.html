@@ -71,15 +71,8 @@
 
     <div id="blog" class="content-section active-section">
         <div class="container pb-5" style="padding-top: 100px;">
-            <div class="text-center mb-4 fade-in-up">
-                <img src="img/pp.png" alt="Çağdaş Çetinkaya, Ph.D."
-                    class="rounded-circle shadow border border-3 border-white mb-3"
-                    style="width: 110px; height: 110px; object-fit: cover; object-position: center 20%;">
-                <h1 class="text-primary fw-bold display-5 rajdhani-bold mb-1">Çağdaş Çetinkaya, Ph.D.</h1>
-                <p class="text-secondary mb-0" style="font-size: 1rem;">Araştırmacı · Geliştirici · Eğitimci</p>
-            </div>
             <div class="text-center mb-5 fade-in-up">
-                <h2 class="text-primary fw-bold h3 rajdhani-bold">Son Yazılar</h2>
+                <h2 class="text-primary fw-bold display-5 rajdhani-bold">Son Yazılar</h2>
                 <p class="text-secondary" style="font-size: 0.9rem;">
                     Eğitim, teknoloji ve bilim üzerine fikirlerim.
                 </p>
@@ -205,10 +198,29 @@
                         <h4 class="h5 fw-bold mb-4 text-secondary text-center">
                             Web Geliştirme
                         </h4>
-                        <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
-                            <span class="badge bg-light text-dark border py-2 px-3">HTML5 &amp; CSS3 &amp; Bootstrap 5 <span class="skill-level">İleri Düzey</span></span>
-                            <span class="badge bg-light text-dark border py-2 px-3">JavaScript (ES6+) <span class="skill-level">Deneyimli</span></span>
-                            <span class="badge bg-light text-dark border py-2 px-3">Node.js &amp; Socket.io <span class="skill-level">Orta Düzey</span></span>
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-1"><span class="fw-bold small">HTML5 & CSS3 &
+                                    Bootstrap 5</span><span class="text-muted small">İleri Düzey</span></div>
+                            <div class="progress rounded-pill" style="height: 14px;">
+                                <div class="progress-bar rounded-pill" style="background-color: #f8f9fa; width: 95%">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-1"><span class="fw-bold small">JavaScript
+                                    (ES6+)</span><span class="text-muted small">Deneyimli</span></div>
+                            <div class="progress rounded-pill" style="height: 14px;">
+                                <div class="progress-bar rounded-pill" style="background-color: #f8f9fa; width: 85%">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4">
+                            <div class="d-flex justify-content-between mb-1"><span class="fw-bold small">Node.js &
+                                    Socket.io</span><span class="text-muted small">Orta Düzey</span></div>
+                            <div class="progress rounded-pill" style="height: 14px;">
+                                <div class="progress-bar rounded-pill" style="background-color: #f8f9fa; width: 75%">
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -854,14 +866,6 @@
     </div>
 
     <!-- ==================== MÜZİK FAB ==================== -->
-    <footer class="site-footer text-center py-4">
-        <div class="d-flex justify-content-center gap-4 mb-2">
-            <a href="https://github.com/cagdascetinkaya" target="_blank" class="footer-link">GitHub</a>
-            <a href="https://orcid.org/0000-0003-1140-9947" target="_blank" class="footer-link">ORCID</a>
-        </div>
-        <p class="small mb-0 footer-muted">© 2026 Çağdaş Çetinkaya</p>
-    </footer>
-
     <button class="music-fab" type="button" data-bs-toggle="offcanvas" data-bs-target="#musicSidebar"
         aria-label="Müzik Çaları Aç">
         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
@@ -963,10 +967,21 @@
             const currentSongTitle = document.getElementById('currentSongTitle');
 
             // Add your GitHub hosted mp3 files here
-            // NOTE: Commercial recordings were removed for copyright safety.
-            // Add royalty-free tracks (e.g. Kevin MacLeod / incompetech.com, Free Music Archive)
-            // to assets/music/ and list them here:
             const files = [
+                { name: "Hepinize El Salladım", url: "assets/music/hes.mp3" },
+                { name: "Requiem in D Minor, (Mass No. 19), K. 626: III. Sequenz VI. Lacrimosa", url: "assets/music/lacrimosa.mp3" },
+                { name: "Champion Soundtrack - Kindred", url: "assets/music/kindred.mp3" },
+                { name: "Sevda Kuşun Kanadında", url: "assets/music/sevdakusunkanadinda.mp3" },
+                { name: "Habanera", url: "assets/music/carmen.mp3" },
+                { name: "Champion Soundtrack - Taliyah", url: "assets/music/taliyah.mp3" },
+                { name: "Merhametsiz", url: "assets/music/merhametsiz.mp3" },
+                { name: "Carol of the Bells", url: "assets/music/coftb.mp3" },
+                { name: "Origin134", url: "assets/music/origin134.mp3" },
+                { name: "Aksak", url: "assets/music/aksak.mp3" },
+                { name: "Ain't No Sunshine", url: "assets/music/aintnosunshine.mp3" },
+                { name: "Não Adianta", url: "assets/music/naoadianta.mp3" },
+                { name: "La Rose Êternelle", url: "assets/music/larose.mp3" },
+                { name: "Come As You Are", url: "assets/music/comeasyouare.mp3" },
             ];
 
             let currentTrack = 0;
