@@ -833,19 +833,39 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    /* no button surface - just the glyph, sized for a 46px touch target */
+    width: 46px;
+    height: 46px;
+    background: none;
     border-radius: 50%;
-    background: rgba(30, 74, 139, 0.1);
-    color: #1e4a8b;
-    transition: all 0.3s ease;
+    color: #7d8ba1;
     text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
-.social-link-light:hover {
-    background: rgba(30, 74, 139, 0.2);
-    color: #163a6e;
+.social-link-light:hover,
+.social-link-light:focus-visible {
+    color: #1e4a8b;
     transform: translateY(-2px);
+}
+
+.social-link-light:focus-visible {
+    /* keyboard focus still needs a visible ring */
+    outline: 2px solid rgba(30, 74, 139, 0.5);
+    outline-offset: 2px;
+}
+
+.social-link-light:active {
+    transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .social-link-light,
+    .social-link-light:hover {
+        transition: none;
+        transform: none;
+    }
 }
 
 /* ===== Static Project Cards ===== */
