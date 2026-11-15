@@ -1164,3 +1164,78 @@ html {
         gap: 14px;
     }
 }
+
+/* ===== Blog sonu: oyun tarzı görünüme açılan oyun kolu ===== */
+.console-portal {
+    display: flex;
+    justify-content: center;
+    margin-top: 56px;
+}
+
+.console-link {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: #1e4a8b;
+    text-decoration: none;
+    opacity: 0.65;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.console-link:hover,
+.console-link:focus-visible {
+    color: #1e4a8b;
+    opacity: 1;
+    transform: translateY(-3px);
+}
+
+.console-link svg {
+    overflow: visible;
+    transform-origin: 50% 60%;
+}
+
+.console-link:hover svg {
+    animation: pad-wiggle 0.5s ease-in-out;
+}
+
+.pad-body {
+    fill: #fff;
+    stroke: currentColor;
+    stroke-width: 2.5;
+    stroke-linejoin: round;
+}
+
+.pad-dpad { fill: currentColor; }
+.pad-mid { fill: currentColor; opacity: 0.45; }
+.pad-btn { fill: #c9d3e0; transition: fill 0.2s ease; }
+
+.console-link:hover .b1 { fill: #0ac8b9; }
+.console-link:hover .b2 { fill: #c8aa6e; transition-delay: 0.05s; }
+.console-link:hover .b3 { fill: #5fa8ff; transition-delay: 0.1s; }
+.console-link:hover .b4 { fill: #b67cff; transition-delay: 0.15s; }
+
+.console-caption {
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 700;
+    font-size: 0.8rem;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    animation: press-start 1.6s steps(1) infinite;
+}
+
+.console-link:hover .console-caption { animation: none; }
+
+@keyframes pad-wiggle {
+    25% { transform: rotate(-6deg); }
+    75% { transform: rotate(6deg); }
+}
+
+@keyframes press-start {
+    50% { opacity: 0.35; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .console-link svg,
+    .console-caption { animation: none !important; }
+}

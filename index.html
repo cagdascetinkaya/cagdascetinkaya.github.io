@@ -69,7 +69,6 @@
         <a href="#about" class="nav-pill-link" data-section="about">About</a>
         <div class="nav-divider" role="separator"></div>
         <a href="tr.html" class="nav-pill-link lang-btn" aria-label="Türkçe sayfaya geç">🇹🇷</a>
-        <a href="champion.html" class="nav-pill-link lang-btn" title="New view" aria-label="Switch to the new view">✦ New</a>
     </nav>
 
     <div id="blog" class="content-section active-section">
@@ -83,6 +82,24 @@
             <!-- Filtre butonları JS tarafından buraya eklenir -->
             <div class="row g-4" id="blogContainer">
 
+            </div>
+
+            <!-- Game-style view portal -->
+            <div class="console-portal">
+                <a href="champion.html" class="console-link" title="Try the game-style view"
+                    aria-label="Open the game-style view">
+                    <svg viewBox="0 0 96 64" width="88" height="59" aria-hidden="true">
+                        <path class="pad-body" d="M28 10h40c11 0 18 7 21 17l5 18c2 9-4 15-11 15-5 0-8-3-11-7l-4-5H28l-4 5c-3 4-6 7-11 7-7 0-13-6-11-15l5-18C10 17 17 10 28 10Z" />
+                        <path class="pad-dpad" d="M22 26h6v-6h6v6h6v6h-6v6h-6v-6h-6Z" />
+                        <rect class="pad-mid" x="42" y="27" width="5" height="3" rx="1.5" />
+                        <rect class="pad-mid" x="50" y="27" width="5" height="3" rx="1.5" />
+                        <circle class="pad-btn b1" cx="70" cy="21" r="3.6" />
+                        <circle class="pad-btn b2" cx="77" cy="28" r="3.6" />
+                        <circle class="pad-btn b3" cx="63" cy="28" r="3.6" />
+                        <circle class="pad-btn b4" cx="70" cy="35" r="3.6" />
+                    </svg>
+                    <span class="console-caption">Press start</span>
+                </a>
             </div>
         </div>
     </div>
