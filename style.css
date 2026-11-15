@@ -1169,17 +1169,15 @@ html {
 .console-portal {
     display: flex;
     justify-content: center;
-    margin-top: 56px;
+    margin-top: 40px;
 }
 
 .console-link {
     display: inline-flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
+    padding: 6px;
     color: #1e4a8b;
     text-decoration: none;
-    opacity: 0.65;
+    opacity: 0.55;
     transition: opacity 0.25s ease, transform 0.25s ease;
 }
 
@@ -1202,7 +1200,7 @@ html {
 .pad-body {
     fill: #fff;
     stroke: currentColor;
-    stroke-width: 2.5;
+    stroke-width: 5;
     stroke-linejoin: round;
 }
 
@@ -1215,27 +1213,11 @@ html {
 .console-link:hover .b3 { fill: #5fa8ff; transition-delay: 0.1s; }
 .console-link:hover .b4 { fill: #b67cff; transition-delay: 0.15s; }
 
-.console-caption {
-    font-family: 'Rajdhani', sans-serif;
-    font-weight: 700;
-    font-size: 0.8rem;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    animation: press-start 1.6s steps(1) infinite;
-}
-
-.console-link:hover .console-caption { animation: none; }
-
 @keyframes pad-wiggle {
-    25% { transform: rotate(-6deg); }
-    75% { transform: rotate(6deg); }
-}
-
-@keyframes press-start {
-    50% { opacity: 0.35; }
+    25% { transform: rotate(-8deg); }
+    75% { transform: rotate(8deg); }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .console-link svg,
-    .console-caption { animation: none !important; }
+    .console-link svg { animation: none !important; }
 }
